@@ -17,6 +17,8 @@
     "lib/FileSaver.js",
     "lib/term.js",
     "build/main.js",
+    "blockly/media/otto_bend.png",
+    "blockly/media/otto_plus.png",
     "blockly/media/sprites.png",
     "images/logo.png",
     "blockly/media/click.mp3",

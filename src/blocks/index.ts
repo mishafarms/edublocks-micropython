@@ -17,6 +17,12 @@ esp32Defs(Blockly.Blocks);
 esp32Gens(Blockly.Python as any);
 toolBoxXml += fs.readFileSync(path.join(__dirname, '..', '..', 'src', 'blocks', 'esp32', 'toolbox.xml'));
 
+import ottoDefs from './otto/definitions';
+import ottoGens from './otto/generators';
+ottoDefs(Blockly.Blocks);
+ottoGens(Blockly.Python as any);
+toolBoxXml += fs.readFileSync(path.join(__dirname, '..', '..', 'src', 'blocks', 'otto', 'toolbox.xml'));
+
 // import gpiozeroDefs from './gpiozero/definitions';
 // import gpiozeroGens from './gpiozero/generators';
 // gpiozeroDefs(Blockly.Blocks);

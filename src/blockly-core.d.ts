@@ -248,7 +248,7 @@ declare module Blockly {
        * Change the colour of a block.
        * @param {number} colourHue HSV hue value.
        */
-      setColour(colourHue: number): void;
+      setColour(colourHue: number | string): void;
   
       /**
        * Returns the named field from a block.
@@ -2913,7 +2913,7 @@ declare module Blockly {
        * @extends {Blockly.Field}
        * @constructor
        */
-      constructor(num1: number, num2?: number, opt_changeHandler?: Function);
+      constructor(num1: number, num2?: number, num3?: number, opt_changeHandler?: Function);
   
       /**
        * Mouse cursor style when over the hotspot that initiates the editor.
