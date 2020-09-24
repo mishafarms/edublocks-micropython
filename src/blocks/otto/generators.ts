@@ -69,7 +69,7 @@ export default function define(Python: Blockly.BlockGenerators) {
         var dropdown_otto_dance_size = block.getFieldValue('otto_dance_size');
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['init_otto'] = 'Otto = otto9.Otto9()\n'
-            + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15\n';
+            + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
 
         var code = '';
         switch(dropdown_otto_dance_movement) {
@@ -101,7 +101,7 @@ export default function define(Python: Blockly.BlockGenerators) {
         var dropdown_otto_dance_size = block.getFieldValue('otto_dance_size');
         Blockly.Python.definitions_['import_otto']='import otto9';
         Blockly.Python.definitions_['init_otto'] = 'Otto = otto9.Otto9()\n'
-            + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15\n';
+            + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
         var code = 'Otto.' + dropdown_otto_do_movement + '(1, ' + dropdown_otto_move_speed + ', ' + dropdown_otto_dance_size + ')\n';
         return code;
     };
@@ -111,7 +111,7 @@ export default function define(Python: Blockly.BlockGenerators) {
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['import_gestures'] = 'import gestures';
         Blockly.Python.definitions_['init_otto'] = 'Otto = otto9.Otto9()\n'
-            + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15\n';
+            + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
         var code = 'Otto.playGesture(' + 'gestures.' + dropdown_otto_gesture.toUpperCase() + ')\n';
         return code;
     };
@@ -121,7 +121,7 @@ export default function define(Python: Blockly.BlockGenerators) {
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['import_songs'] = 'import songs';
         Blockly.Python.definitions_['init_otto'] = 'Otto = otto9.Otto9()\n'
-            + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15\n';
+            + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
         var code = 'Otto.sing(songs.' + dropdown_otto_sound.toUpperCase().substring(2) + ')\n';
         return code;
     };
@@ -131,7 +131,7 @@ export default function define(Python: Blockly.BlockGenerators) {
         var dropdown_otto_note_duration = block.getFieldValue('otto_note_duration');
         Blockly.Python.definitions_['import_otto']='import otto9';
         Blockly.Python.definitions_['init_otto'] = 'Otto = otto9.Otto9()\n'
-            + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15\n';
+            + 'Otto.init(33, 25, 26, 27, True, 34, 4, 2, 15)\n';
         var code = "Otto._tone(" + dropdown_otto_note + ", " + dropdown_otto_note_duration + ", 1)\n";
         return code;
     };
