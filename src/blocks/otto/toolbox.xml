@@ -1,12 +1,11 @@
-<category name="OTTO" colour="75">
-  <block type="import_otto"></block>
-  <block type="otto"></block>
-
-  <block type="otto_init"></block>
-
-  <block type="otto_home"></block>
-  <block type="otto_calibrate"></block>
-  <block type="otto_eeprom"></block>
-  <block type="otto_move"></block>
-  <block type="otto_walk"></block>
+<category name="OTTO" colour="#32D900">
+  <block type="otto9_home"></block>
+  <block type="otto9_calibrate"></block>
+  <block type="otto9_eeprom"></block>
+  <block type="otto9_move"></block>
+  <block type="otto9_dance"></block>
+  <block type="otto9_do"></block>
+  <block type="otto9_gesture"></block>
+  <block type="otto9_sound"></block>
+  <block type="otto9_tone"></block>
 </category>
