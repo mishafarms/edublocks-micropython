@@ -1,6 +1,6 @@
 <category name="OTTO" colour="#32D900">
   <block type="otto9_home"></block>
-  <block type="otto9_calibrate"></block>
+  <block type="otto9_calibration"></block>
   <block type="otto9_eeprom"></block>
   <block type="otto9_move"></block>
   <block type="otto9_dance"></block>
@@ -8,4 +8,31 @@
   <block type="otto9_gesture"></block>
   <block type="otto9_sound"></block>
   <block type="otto9_tone"></block>
+  <block type="otto9_getnoise"></block>
+  <block type="otto9_touchbutton"></block>
+</category>
+<category name="OTTO Humanoid" colour="#59646f">
+<block type="otto9_homeh"></block>
+<block type="otto9_calibrationh"></block>
+<block type="otto9_eeprom"></block>
+<block type="otto9_moveh"></block>
+<block type="otto9_danceh"></block>
+<block type="otto9_doh"></block>
+<block type="otto9_gestureh"></block>
+<block type="otto9_soundh"></block>
+<block type="otto9_toneh"></block>
+<block type="otto9_arms"></block>
+<block type="otto9_getnoise"></block>
+<block type="otto9_touchbutton"></block>
+</category>
+<category name="LED Mouth" colour="#59646f">
+<block type="otto9_matrix"></block>
+<block type="otto9_matrix8x8"></block>
+<block type="otto9_mouth"></block>
+<block type="otto9_mouth#"></block>
+<block type="otto9_mouthv"></block>
+<block type="otto9_matrixp"></block>
+<block type="otto9_matrix_text"></block>
+<block type="otto9_matrix_brightness"></block>
+<block type="otto9_clear"></block>
 </category>

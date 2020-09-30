@@ -1188,6 +1188,8 @@ declare module Blockly {
      */
     var ALIGN_RIGHT: any /*missing*/;
 
+    var Msg: any;
+
     /**
      * Lookup table for determining the opposite type of a connection.
      * @const
@@ -2399,6 +2401,13 @@ declare module Blockly.FieldAngle {
      * @return {?string} A string representing a valid angle, or null if invalid.
      */
     function angleValidator(text: string): string;
+}
+
+declare module Blockly.FieldCheckbox {
+    /**
+     * What the Checkbox characer should be
+     */
+    var CHECK_CHAR: any;
 }
 
 declare module Blockly {
@@ -3794,6 +3803,7 @@ declare module goog {
      * @suppress {duplicate}
      */
     function getMsg(str: string, opt_values?: { [key: string]: string }): string;
+    function require(str: string): string;
 }
 
 declare module goog.getMsg {
