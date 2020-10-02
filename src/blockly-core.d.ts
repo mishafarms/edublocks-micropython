@@ -481,7 +481,6 @@ declare module Blockly {
          */
         moveBy(dx: number, dy: number): void;
     }
-
 }
 
 declare module Blockly.Block {
@@ -1452,7 +1451,7 @@ declare module Blockly {
     }
 
     interface BlockGenerators {
-        [blockId: string]: (block: Block) => string;
+        [blockId: string]: (block: Block) => string|[string, any];
     }
 
     const Blocks: {
@@ -1464,6 +1463,8 @@ declare module Blockly {
     const Python: {
         statementToCode(block: Block, d: 'DO' | 'NAME' | 'VALUE'): string;
         addLoopTrap(code: string, id: string): string;
+        valueToCode(block: Block, name: string, option?: any): string;
+
         workspaceToCode(workspace: Blockly.Workspace): string;
 
         definitions_: {
@@ -1475,6 +1476,8 @@ declare module Blockly {
         variableDB_: {
             getName(name: string, type: any): string;
         }
+
+        ORDER_ATOMIC: any;
     };
 
     class Bubble extends Bubble__Class {
@@ -3734,6 +3737,15 @@ declare module Blockly {
          * @deprecated December 2013
          */
         appendTitle(field: any, opt_name?: string): Blockly.Input;
+
+        /**
+         * Add an item to the end of the input's field row.
+         * @param {string|!Blockly.Field} field Something to add as a field.
+         * @param {string=} opt_name Language-neutral identifier which may used to find
+         *     this field again.  Should be unique to the host block.
+         * @return {!Blockly.Input} The input being append to (to allow chaining).
+         */
+        appendValueInput(field: string | Blockly.Field, opt_name?: string): Blockly.Input;
 
         /**
          * Remove a field from this input.

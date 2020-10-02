@@ -133,17 +133,20 @@ export default function define(Python: Blockly.BlockGenerators) {
         return code;
     };
 
+    Python['otto9_getdistance'] = (block) => {
+        let code = `Otto.getDistance()`;
+        return [code, Blockly.Python.ORDER_ATOMIC];
+    };
+
     Python['otto9_getnoise'] = (block) => {
-        const noisename = block.getFieldValue('noise_name');
-        let code = `${noisename} = Otto.getNoise()`;
-        return code;
+        let code = `Otto.getNoise()`;
+        return [code, Blockly.Python.ORDER_ATOMIC];
     };
 
     Python['otto9_touchbutton'] = (block) => {
-        const touchname = block.getFieldValue('touch_name');
-        Blockly.Python.definitions_['touch_pin'] = 'touch1 = TouchPad(Pin(14))'
-        let code = `${touchname} = touch1.read()`;
-        return code;
+        Blockly.Python.definitions_['touch_pin'] = 'touchPin = TouchPad(Pin(14))'
+        let code = `touchPin.read()`;
+        return [code, Blockly.Python.ORDER_ATOMIC];
     };
 
     Python['otto9_homeh'] = (block) => {
@@ -325,18 +328,7 @@ export default function define(Python: Blockly.BlockGenerators) {
     };
 
     Python['otto9_mouth#'] = (block) => {
-        const valuemouth = block.getFieldValue('mouth');
-        Blockly.Python.definitions_['import_otto'] = 'import otto9';
-        Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
-            + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
-        Blockly.Python.definitions_['ledmatrix_init'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
-        return 'Otto.clearMouth()\n'
-            + `Otto.writeText(str(${valuemouth}), 50) # show the data with a fast scroll\n`
-            + 'delay(50)\n';
-    };
-
-    Python['otto9_mouthv'] = (block) => {
-        const valuemouth = block.getFieldValue('value');
+        const valuemouth = Blockly.Python.valueToCode(block, 'mouth', Blockly.Python.ORDER_ATOMIC);;
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
             + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
@@ -347,8 +339,8 @@ export default function define(Python: Blockly.BlockGenerators) {
     };
 
     Python['otto9_matrixp'] = (block) => {
-        const valuex = block.getFieldValue('X');
-        const valuey = block.getFieldValue('Y');
+        const valuex = Blockly.Python.valueToCode(block, 'X', Blockly.Python.ORDER_ATOMIC);
+        const valuey = Blockly.Python.valueToCode(block, 'Y', Blockly.Python.ORDER_ATOMIC);
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
             + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
@@ -357,17 +349,17 @@ export default function define(Python: Blockly.BlockGenerators) {
     };
 
     Python['otto9_matrix_text'] = (block) => {
-        const text_input = block.getFieldValue('input');
+        const text_input = Blockly.Python.valueToCode(block, 'input', Blockly.Python.ORDER_ATOMIC);
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
             + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';
         Blockly.Python.definitions_['ledmatrix_init'] = 'Otto.initMatrix(19, 5, 18, 1)\n';
         return 'Otto.clearMouth()\n'
-            + `Otto.writeText("${text_input}", 100) # limited to CAPITAL LETTERS NUMBERS : ; < >  = @, MAX.9 characters \n`;
+            + `Otto.writeText(${text_input}, 100) # limited to CAPITAL LETTERS NUMBERS : ; < >  = @, MAX.9 characters \n`;
     };
 
     Python['otto9_matrix_brightness'] = (block) => {
-        const brightness = block.getFieldValue('brightness');
+        const brightness = Blockly.Python.valueToCode(block, 'brightness', Blockly.Python.ORDER_ATOMIC);;
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['otto_init'] = 'Otto = otto9.Otto9()\n'
             + 'Otto.initHUMANOID(23, 22, 33, 25, 26, 27, True, 35, 4, 2, 15)\n';

@@ -158,16 +158,28 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
         }
     };
 
+    Blocks['otto9_getdistance'] = {
+        init() {
+            this.appendDummyInput()
+                .appendField(new Blockly.FieldImage('blockly/media/sensor_ultrasound.png', 48, 48, "*"))
+                .appendField(' = ')
+                .appendField(Blockly.Msg.OTTO9_GETDISTANCE_TEXT);
+            this.setInputsInline(true);
+            this.setOutput(true, "Number");
+            this.setColour('#2a93e8');
+            this.setTooltip(Blockly.Msg.OTTO9_GETDISTANCE_TOOLTIP);
+            this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
+        }
+    };
+
     Blocks['otto9_getnoise'] = {
         init() {
             this.appendDummyInput()
                 .appendField(new Blockly.FieldImage('blockly/media/sensor_noise.png', 48, 48, '*'))
-                .appendField(new Blockly.FieldTextInput('noise'), 'noise_name')
                 .appendField(' = ')
                 .appendField(Blockly.Msg.OTTO9_GETNOISE_TEXT);
             this.setInputsInline(true);
-            this.setPreviousStatement(true, null);
-            this.setNextStatement(true, null);
+            this.setOutput(true, "Number");
             this.setColour('#2a93e8');
             this.setTooltip(Blockly.Msg.OTTO9_GETNOISE_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
@@ -178,12 +190,10 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
         init() {
             this.appendDummyInput()
                 .appendField(new Blockly.FieldImage('blockly/media/sensor_touch.png', 48, 48, '*'))
-                .appendField(new Blockly.FieldTextInput('touch'), 'touch_name')
                 .appendField(' = ')
                 .appendField(Blockly.Msg.OTTO9_GETTOUCH_TEXT);
             this.setInputsInline(true);
-            this.setPreviousStatement(true, null);
-            this.setNextStatement(true, null);
+            this.setOutput(true, "Number");
             this.setColour('#2a93e8');
             this.setTooltip(Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
@@ -518,23 +528,8 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
 
     Blocks['otto9_mouth#'] = {
         init() {
-            this.appendDummyInput()
-                .appendField(Blockly.Msg.OTTO9_MOUTH_NUM_TEXT)
-                .appendField(new Blockly.FieldNumber(0), 'mouth');
-            this.setInputsInline(true);
-            this.setPreviousStatement(true, null);
-            this.setNextStatement(true, null);
-            this.setColour('#59646f');
-            this.setTooltip(Blockly.Msg.OTTO9_MATRIX_TOOLTIP);
-            this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
-        }
-    };
-
-    Blocks['otto9_mouthv'] = {
-        init() {
-            this.appendDummyInput()
-                .appendField(Blockly.Msg.OTTO9_MOUTH_NUM_TEXT)
-                .appendField(new Blockly.FieldTextInput('value'), 'value_name')
+            this.appendDummyInput();
+            this.appendValueInput("mouth") .appendField(Blockly.Msg.OTTO9_MOUTH_TEXT);
             this.setInputsInline(true);
             this.setPreviousStatement(true, null);
             this.setNextStatement(true, null);
@@ -546,11 +541,9 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
 
     Blocks['otto9_matrixp'] = {
         init() {
-            this.appendDummyInput()
-                .appendField('pixel X')
-                .appendField(new Blockly.FieldNumber(0, 0, 7), 'X')
-                .appendField('Y')
-                .appendField(new Blockly.FieldNumber(0, 0, 7), 'Y');
+            this.appendDummyInput().appendField('pixel X');
+            this.appendValueInput('X').setCheck('Number').appendField("Y");
+            this.appendValueInput('Y').setCheck('Number');
             this.setInputsInline(true);
             this.setPreviousStatement(true, null);
             this.setNextStatement(true, null);
@@ -563,8 +556,8 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
     Blocks['otto9_matrix_text'] = {
         init() {
             this.appendDummyInput()
-                .appendField(Blockly.Msg.OTTO9_MATRIXTEXT_TEXT)
-                .appendField(new Blockly.FieldTextInput('I AM OTTO'), 'input');
+                .appendField(Blockly.Msg.OTTO9_MATRIXTEXT_TEXT);
+            this.appendValueInput('input').setCheck('String');
             this.setInputsInline(true);
             this.setPreviousStatement(true, null);
             this.setNextStatement(true, null);
@@ -577,8 +570,8 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
     Blocks['otto9_matrix_brightness'] = {
         init() {
             this.appendDummyInput()
-                .appendField(Blockly.Msg.MATRIX + ' intensity ')
-                .appendField(new Blockly.FieldNumber(0, 0, 15), 'brightness');
+                .appendField(Blockly.Msg.MATRIX + ' intensity ');
+            this.appendValueInput('brightness').setCheck('Number');
             this.setInputsInline(true);
             this.setPreviousStatement(true, null);
             this.setNextStatement(true, null);
