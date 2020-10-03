@@ -1,71 +1,74 @@
 export default function define(Python: Blockly.BlockGenerators) {
-  Python['import_screen'] = () => {
-    return 'import screen\n';
-  };
-
   Python['import_machine'] = () => {
-    return 'import machine\n';
+    Blockly.Python.definitions_['import_machine'] = 'import machine\n';
+    return '';
   };
 
   Python['import_neopixel'] = () => {
-    return 'import neopixel\n';
-  };
-
-  Python['screen_print_line'] = (block) => {
-    const text = block.getFieldValue('text');
-    const line = block.getFieldValue('line');
-
-    return `screen.print_line(${text}, ${line})\n`;
+    Blockly.Python.definitions_['import_neopixel'] = 'import neopixel\n';
+    return '';
   };
 
   Python['pin_in_declare'] = (block) => {
-    const pin_name = block.getFieldValue('pin_name');
-    const pin_number = block.getFieldValue('pin_number');
+    const pin_number = Blockly.Python.valueToCode(block, 'pin_number', Blockly.Python.ORDER_ATOMIC);
     const pull_up_down = block.getFieldValue('pull_up_down');
+    Blockly.Python.definitions_['import_machine'] = 'import machine\n';
 
-    return `${pin_name} = machine.Pin(${pin_number}, machine.Pin.IN, machine.Pin.${pull_up_down})\n`;
+    let code = `machine.Pin(${pin_number}, machine.Pin.IN, machine.Pin.${pull_up_down})\n`;
+    return [code, Blockly.Python.ORDER_ATOMIC];
   };
 
   Python['pin_out_declare'] = (block) => {
-    const pin_name = block.getFieldValue('pin_name');
-    const pin_number = block.getFieldValue('pin_number');
+    const pin_number = Blockly.Python.valueToCode(block, 'pin_number', Blockly.Python.ORDER_ATOMIC);
+    Blockly.Python.definitions_['import_machine'] = 'import machine\n';
 
-    return `${pin_name} = machine.Pin(${pin_number}, machine.Pin.OUT)\n`;
+    let code = `machine.Pin(${pin_number}, machine.Pin.OUT)\n`;
+    return [code, Blockly.Python.ORDER_ATOMIC];
   };
 
   Python['pin_value_get'] = (block) => {
-    const var_name = block.getFieldValue('var_name');
-    const pin_name = block.getFieldValue('pin_name');
+    const pin_name = Blockly.Python.valueToCode(block, 'pin_name', Blockly.Python.ORDER_ATOMIC);
+    Blockly.Python.definitions_['import_machine'] = 'import machine\n';
 
-    return `${var_name} = ${pin_name}.value()\n`;
+    let code = `${pin_name}.value()\n`;
+    return [code, Blockly.Python.ORDER_ATOMIC];
   };
 
   Python['pin_value_set'] = (block) => {
-    const pin_name = block.getFieldValue('pin_name');
-    const value = block.getFieldValue('value');
+    const pin_name = Blockly.Python.valueToCode(block, 'pin_name', Blockly.Python.ORDER_ATOMIC);
+    const value = Blockly.Python.valueToCode(block, 'value', Blockly.Python.ORDER_ATOMIC);
+    Blockly.Python.definitions_['import_machine'] = 'import machine\n';
 
-    return `${pin_name}.value(${value})\n`;
+    let code = `${pin_name}.value(${value})\n`;
+    return code;
   };
 
   Python['neopixel_declare'] = (block) => {
-    const pin_name = block.getFieldValue('pin_name');
-    const length = block.getFieldValue('length');
+    const pin_number = Blockly.Python.valueToCode(block, 'pin_number', Blockly.Python.ORDER_ATOMIC);
+    const length = Blockly.Python.valueToCode(block, 'length', Blockly.Python.ORDER_ATOMIC);
+    Blockly.Python.definitions_['import_neopixel'] = 'import neopixel\n';
 
-    return `np = neopixel.NeoPixel(${pin_name}, ${length})\n`;
+    let code = `neopixel.NeoPixel(${pin_number}, ${length})\n`;
+    return [code, Blockly.Python.ORDER_ATOMIC];
   };
 
   Python['led_colour_set'] = (block) => {
-    const index = block.getFieldValue('index');
+    const np_name = Blockly.Python.valueToCode(block, 'np_name', Blockly.Python.ORDER_ATOMIC);
+    const index = Blockly.Python.valueToCode(block, 'index', Blockly.Python.ORDER_ATOMIC);
     const colour1 = block.getFieldValue('colour1');
+    Blockly.Python.definitions_['import_neopixel'] = 'import neopixel\n';
 
     const r = parseInt(colour1.substr(1, 2), 16);
     const g = parseInt(colour1.substr(3, 2), 16);
     const b = parseInt(colour1.substr(5, 2), 16);
 
-    return `np[${index}] = (${r}, ${g}, ${b}) # Colour = ${colour1}\n`;
+    return `${np_name}[${index}] = (${r}, ${g}, ${b}) # Colour = ${colour1}\n`;
   };
 
-  Python['neopixel_write'] = () => {
-    return 'np.write()\n';
+  Python['neopixel_write'] = (block) => {
+    const np_name = Blockly.Python.valueToCode(block, 'np_name', Blockly.Python.ORDER_ATOMIC);
+    Blockly.Python.definitions_['import_neopixel'] = 'import neopixel\n';
+
+    return `${np_name}.write()\n`;
   };
 }

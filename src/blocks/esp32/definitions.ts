@@ -1,16 +1,4 @@
 export default function define(Blocks: Blockly.BlockDefinitions) {
-  Blocks['import_screen'] = {
-    init() {
-      this.appendDummyInput()
-        .appendField('import screen');
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour(336);
-      this.setTooltip('Imports the screen screen library.');
-      this.setHelpUrl('http://www.example.com/');
-    },
-  };
-
   Blocks['import_machine'] = {
     init() {
       this.appendDummyInput()
@@ -35,33 +23,17 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
     },
   };
 
-  Blocks['screen_print_line'] = {
-    init() {
-      this.appendDummyInput()
-        .appendField('screen.print_line(')
-        .appendField(new Blockly.FieldTextInput('\'Hello World!\''), 'text')
-        .appendField(',')
-        .appendField(new Blockly.FieldNumber(0), 'line')
-        .appendField(')');
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
-      this.setColour(120);
-      this.setTooltip('Write a line of text');
-      this.setHelpUrl('http://www.example.com/');
-    },
-  };
-
   Blocks['pin_in_declare'] = {
     init() {
       this.appendDummyInput()
-        .appendField(new Blockly.FieldTextInput('pin'), 'pin_name')
-        .appendField(' = machine.Pin(')
-        .appendField(new Blockly.FieldNumber(0), 'pin_number')
+        .appendField('machine.Pin(');
+      this.appendValueInput('pin_number').setCheck('Number');
+      this.appendDummyInput()
         .appendField(', machine.Pin.IN, machine.Pin.')
         .appendField(new Blockly.FieldDropdown([['PULL_UP', 'PULL_UP'], ['PULL_DOWN', 'PULL_DOWN']]), 'pull_up_down')
         .appendField(')');
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
+      this.setInputsInline(true);
+      this.setOutput(true, 'Number');
       this.setColour(120);
       this.setTooltip('Declare an input pin');
       this.setHelpUrl('http://www.example.com/');
@@ -71,12 +43,12 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
   Blocks['pin_out_declare'] = {
     init() {
       this.appendDummyInput()
-        .appendField(new Blockly.FieldTextInput('pin'), 'pin_name')
-        .appendField(' = machine.Pin(')
-        .appendField(new Blockly.FieldNumber(0), 'pin_number')
+        .appendField('machine.Pin(')
+      this.appendValueInput('pin_number').setCheck('Number');
+      this.appendDummyInput()
         .appendField(', machine.Pin.OUT)');
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
+      this.setInputsInline(true);
+      this.setOutput(true, 'Number');
       this.setColour(120);
       this.setTooltip('Declare an output pin');
       this.setHelpUrl('http://www.example.com/');
@@ -85,13 +57,11 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
 
   Blocks['pin_value_get'] = {
     init() {
+      this.appendValueInput('pin_name').setCheck('String');
       this.appendDummyInput()
-        .appendField(new Blockly.FieldTextInput('value'), 'var_name')
-        .appendField(' = ')
-        .appendField(new Blockly.FieldTextInput('pin'), 'pin_name')
         .appendField('.value()');
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
+      this.setInputsInline(true);
+      this.setOutput(true, null);
       this.setColour(120);
       this.setTooltip('Get pin value');
       this.setHelpUrl('http://www.example.com/');
@@ -100,10 +70,11 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
 
   Blocks['pin_value_set'] = {
     init() {
+      this.appendValueInput('pin_name').setCheck('String');
       this.appendDummyInput()
-        .appendField(new Blockly.FieldTextInput('pin'), 'pin_name')
-        .appendField('.value(')
-        .appendField(new Blockly.FieldNumber(0), 'value')
+        .appendField('.value(');
+      this.appendValueInput('value');
+      this.appendDummyInput()
         .appendField(')');
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
@@ -116,13 +87,15 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
   Blocks['neopixel_declare'] = {
     init() {
       this.appendDummyInput()
-        .appendField('np = neopixel.NeoPixel(')
-        .appendField(new Blockly.FieldTextInput('pin'), 'pin_name')
-        .appendField(', ')
-        .appendField(new Blockly.FieldNumber(8), 'length')
+        .appendField('neopixel.NeoPixel(');
+      this.appendValueInput('pin_number').setCheck('Number');
+      this.appendDummyInput()
+        .appendField(', ');
+      this.appendValueInput('length').setCheck('Number');
+      this.appendDummyInput()
         .appendField(')');
-      this.setPreviousStatement(true, null);
-      this.setNextStatement(true, null);
+      this.setInputsInline(true);
+      this.setOutput(true, null);
       this.setColour(120);
       this.setTooltip('Declare NeoPixel strip');
       this.setHelpUrl('http://www.example.com/');
@@ -131,9 +104,11 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
 
   Blocks['led_colour_set'] = {
     init() {
+      this.appendValueInput('np_name').setCheck('String');
       this.appendDummyInput()
-        .appendField('np[')
-        .appendField(new Blockly.FieldTextInput('index'), 'index')
+        .appendField('[');
+      this.appendValueInput('index').setCheck('Number');
+      this.appendDummyInput()
         .appendField('] = (')
         .appendField(new Blockly.FieldColour('colour1'), 'colour1')
         .appendField(')');
@@ -147,8 +122,9 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
 
   Blocks['neopixel_write'] = {
     init() {
+      this.appendValueInput('np_name').setCheck('String');
       this.appendDummyInput()
-        .appendField('np.write()');
+        .appendField('.write()');
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(120);
