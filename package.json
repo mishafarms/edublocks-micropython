@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "tsc --watch & watchify -t brfs src/main.js -o web/build/main.js",
-    "build": "tsc && browserify -t brfs src/main.js -o web/build/main.js",
+    "build": "tsc && browserify -d -t brfs src/main.js -o web/build/main.js",
     "serve": "http-server web",
     "lint": "tslint src/**/*.ts"
   },
@@ -37,6 +37,7 @@
     "watchify": "^3.9.0"
   },
   "dependencies": {
+    "exorcist": "^1.0.1",
     "lodash": "^4.17.4",
     "picnic": "^6.3.2",
     "preact": "^8.1.0"

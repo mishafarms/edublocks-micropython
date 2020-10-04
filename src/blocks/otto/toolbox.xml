@@ -1,17 +1,37 @@
-<category name="Math" colour="#5b67a5">
-  <block type="math_number">
-    <field name="NUM">42</field>
-  </block>
-</category>
-<category name="Text" colour="#5ba58c">
-<block type="text">
-  <field name="TEXT"></field>
-</block>
-</category>
-
 <category name="OTTO" colour="#32D900">
   <block type="otto9_home"></block>
-  <block type="otto9_calibration"></block>
+  <block type="otto9_calibration">
+    <value name="LL">
+      <shadow type="math_number">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+    <value name="RL">
+      <shadow type="math_number">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+    <value name="LF">
+      <shadow type="math_number">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+    <value name="RF">
+      <shadow type="math_number">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+    <value name="LA">
+      <shadow type="math_number">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+    <value name="RA">
+      <shadow type="math_number">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+  </block>
   <block type="otto9_eeprom"></block>
   <block type="otto9_move"></block>
   <block type="otto9_dance"></block>
@@ -19,24 +39,14 @@
   <block type="otto9_gesture"></block>
   <block type="otto9_sound"></block>
   <block type="otto9_tone"></block>
-  <block type="otto9_getdistance"></block>
-  <block type="otto9_getnoise"></block>
-  <block type="otto9_touchbutton"></block>
-</category>
-<category name="OTTO Humanoid" colour="#59646f">
-<block type="otto9_homeh"></block>
-<block type="otto9_calibrationh"></block>
-<block type="otto9_eeprom"></block>
-<block type="otto9_moveh"></block>
-<block type="otto9_danceh"></block>
-<block type="otto9_doh"></block>
-<block type="otto9_gestureh"></block>
-<block type="otto9_soundh"></block>
-<block type="otto9_toneh"></block>
-<block type="otto9_arms"></block>
-<block type="otto9_getdistance"></block>
-<block type="otto9_getnoise"></block>
-<block type="otto9_touchbutton"></block>
+  <category name="Humanoid" colour="#2a93e8">
+    <block type="otto9_arms"></block>
+  </category>
+  <category name="Sensors" colour="#2a93e8">
+    <block type="otto9_getdistance"></block>
+    <block type="otto9_getnoise"></block>
+    <block type="otto9_touchbutton"></block>
+  </category>
 </category>
 <category name="LED Mouth" colour="#59646f">
 <block type="otto9_matrix"></block>
@@ -76,6 +86,4 @@
   </value>
 </block>
 <block type="otto9_clear"></block>
-</category>
-<category name="Variables" custom="VARIABLE" >
 </category>
