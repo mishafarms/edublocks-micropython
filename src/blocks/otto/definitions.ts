@@ -21,7 +21,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.appendDummyInput()
                 .setAlign(Blockly.ALIGN_RIGHT)
                 .appendField('Load Calibrate')
-                .appendField(new Blockly.FieldDropdown([['True', 'true'], ['False', 'false']]), 'Cali');
+                .appendField(new Blockly.FieldDropdown([['True', 'True'], ['False', 'False']]), 'Cali');
             this.appendDummyInput()
                 .setAlign(Blockly.ALIGN_RIGHT)
                 .appendField('Noise')
@@ -69,7 +69,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.appendDummyInput()
                 .setAlign(Blockly.ALIGN_RIGHT)
                 .appendField('Load Calibrate')
-                .appendField(new Blockly.FieldDropdown([['True', 'true'], ['False', 'false']]), 'Cali');
+                .appendField(new Blockly.FieldDropdown([['True', 'True'], ['False', 'Talse']]), 'Cali');
             this.appendDummyInput()
                 .setAlign(Blockly.ALIGN_RIGHT)
                 .appendField('Noise')
