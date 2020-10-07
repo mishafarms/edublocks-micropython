@@ -1,6 +1,96 @@
 goog.require('Blockly.Msg');
 
 export default function define(Blocks: Blockly.BlockDefinitions) {
+    Blocks['otto9_init'] = {
+        init() {
+            this.appendDummyInput()
+                .setAlign(Blockly.ALIGN_LEFT)
+                .appendField('Otto ' + Blockly.Msg.OTTO9_INIT_TEXT + ' :');
+            this.appendDummyInput()
+                .setAlign(Blockly.ALIGN_RIGHT)
+                .appendField('LL')
+                .appendField(new Blockly.FieldNumber(33, 0, 40), 'LL')
+                .appendField('RL')
+                .appendField(new Blockly.FieldNumber(25, 0, 40), 'RL');
+            this.appendDummyInput()
+                .setAlign(Blockly.ALIGN_RIGHT)
+                .appendField('LF')
+                .appendField(new Blockly.FieldNumber(26, 0, 40), 'LF')
+                .appendField('RF')
+                .appendField(new Blockly.FieldNumber(27, 0, 40), 'RF');
+            this.appendDummyInput()
+                .setAlign(Blockly.ALIGN_RIGHT)
+                .appendField('Load Calibrate')
+                .appendField(new Blockly.FieldDropdown([['True', 'true'], ['False', 'false']]), 'Cali');
+            this.appendDummyInput()
+                .setAlign(Blockly.ALIGN_RIGHT)
+                .appendField('Noise')
+                .appendField(new Blockly.FieldNumber(34, 0, 40), 'Noise')
+                .appendField('Buzzer')
+                .appendField(new Blockly.FieldNumber(4, 0, 40), 'Buzzer');
+            this.appendDummyInput()
+                .setAlign(Blockly.ALIGN_RIGHT)
+                .appendField('Echo')
+                .appendField(new Blockly.FieldNumber(2, 0, 40), 'Echo')
+                .appendField('Buzzer')
+                .appendField(new Blockly.FieldNumber(15, 0, 40), 'Trigger');
+            this.setInputsInline(false);
+            this.setPreviousStatement(true, null);
+            this.setNextStatement(true, null);
+            this.setColour('#32D900');
+            this.setTooltip(Blockly.Msg.OTTO9_INIT_TOOLTIP);
+            this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
+        },
+    };
+
+    Blocks['otto9_inith'] = {
+        init() {
+            this.appendDummyInput()
+                .setAlign(Blockly.ALIGN_LEFT)
+                .appendField('Otto Humanoid ' + Blockly.Msg.OTTO9_INIT_TEXT + ' :');
+            this.appendDummyInput()
+                .setAlign(Blockly.ALIGN_RIGHT)
+                .appendField('LL')
+                .appendField(new Blockly.FieldNumber(23, 0, 40), 'LL')
+                .appendField('RL')
+                .appendField(new Blockly.FieldNumber(22, 0, 40), 'RL');
+            this.appendDummyInput()
+                .setAlign(Blockly.ALIGN_RIGHT)
+                .appendField('LF')
+                .appendField(new Blockly.FieldNumber(33, 0, 40), 'LF')
+                .appendField('RF')
+                .appendField(new Blockly.FieldNumber(25, 0, 40), 'RF');
+            this.appendDummyInput()
+                .setAlign(Blockly.ALIGN_RIGHT)
+                .appendField('LA')
+                .appendField(new Blockly.FieldNumber(26, 0, 40), 'LA')
+                .appendField('RA')
+                .appendField(new Blockly.FieldNumber(27, 0, 40), 'RA');
+            this.appendDummyInput()
+                .setAlign(Blockly.ALIGN_RIGHT)
+                .appendField('Load Calibrate')
+                .appendField(new Blockly.FieldDropdown([['True', 'true'], ['False', 'false']]), 'Cali');
+            this.appendDummyInput()
+                .setAlign(Blockly.ALIGN_RIGHT)
+                .appendField('Noise')
+                .appendField(new Blockly.FieldNumber(35, 0, 40), 'Noise')
+                .appendField('Buzzer')
+                .appendField(new Blockly.FieldNumber(4, 0, 40), 'Buzzer');
+            this.appendDummyInput()
+                .setAlign(Blockly.ALIGN_RIGHT)
+                .appendField('Echo')
+                .appendField(new Blockly.FieldNumber(2, 0, 40), 'Echo')
+                .appendField('Buzzer')
+                .appendField(new Blockly.FieldNumber(15, 0, 40), 'Trigger');
+            this.setInputsInline(false);
+            this.setPreviousStatement(true, null);
+            this.setNextStatement(true, null);
+            this.setColour('#59646f');
+            this.setTooltip(Blockly.Msg.OTTO9_INIT_TOOLTIP);
+            this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
+        },
+    };
+
     Blocks['otto9_home'] = {
         init() {
             this.appendDummyInput()
@@ -11,7 +101,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.setColour('#32D900');
             this.setTooltip(Blockly.Msg.OTTO9_HOME_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-        }
+        },
     };
 
     Blocks['otto9_calibration'] = {
@@ -52,7 +142,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.setColour('#32D900');
             this.setTooltip(Blockly.Msg.OTTO9_CALIBRATION_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
-        }
+        },
     };
 
     Blocks['otto9_eeprom'] = {
@@ -64,7 +154,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.setColour('#ff6600');
             this.setTooltip(Blockly.Msg.OTTO9_EEPROM_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-        }
+        },
     };
 
     Blocks['otto9_move'] = {
@@ -83,7 +173,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.setColour('#32D900');
             this.setTooltip(Blockly.Msg.OTTO9_MOVE_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-        }
+        },
     };
 
     Blocks['otto9_dance'] = {
@@ -106,7 +196,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.setColour('#32D900');
             this.setTooltip(Blockly.Msg.OTTO9_DANCE_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-        }
+        },
     };
 
     Blocks['otto9_do'] = {
@@ -127,7 +217,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.setColour('#32D900');
             this.setTooltip(Blockly.Msg.OTTO9_DO_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-        }
+        },
     };
 
     Blocks['otto9_gesture'] = {
@@ -142,7 +232,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.setColour('#32D900');
             this.setTooltip(Blockly.Msg.OTTO9_GESTURE_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-        }
+        },
     };
 
     Blocks['otto9_sound'] = {
@@ -157,7 +247,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.setColour('#32D900');
             this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-        }
+        },
     };
 
     Blocks['otto9_tone'] = {
@@ -174,21 +264,21 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.setColour('#32D900');
             this.setTooltip(Blockly.Msg.OTTO9_SOUND_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-        }
+        },
     };
 
     Blocks['otto9_getdistance'] = {
         init() {
             this.appendDummyInput()
-                .appendField(new Blockly.FieldImage('blockly/media/sensor_ultrasound.png', 48, 48, "*"))
+                .appendField(new Blockly.FieldImage('blockly/media/sensor_ultrasound.png', 48, 48, '*'))
                 .appendField(' = ')
                 .appendField(Blockly.Msg.OTTO9_GETDISTANCE_TEXT);
             this.setInputsInline(true);
-            this.setOutput(true, "Number");
+            this.setOutput(true, 'Number');
             this.setColour('#2a93e8');
             this.setTooltip(Blockly.Msg.OTTO9_GETDISTANCE_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
-        }
+        },
     };
 
     Blocks['otto9_getnoise'] = {
@@ -198,11 +288,11 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
                 .appendField(' = ')
                 .appendField(Blockly.Msg.OTTO9_GETNOISE_TEXT);
             this.setInputsInline(true);
-            this.setOutput(true, "Number");
+            this.setOutput(true, 'Number');
             this.setColour('#2a93e8');
             this.setTooltip(Blockly.Msg.OTTO9_GETNOISE_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
-        }
+        },
     };
 
     Blocks['otto9_touchbutton'] = {
@@ -212,11 +302,11 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
                 .appendField(' = ')
                 .appendField(Blockly.Msg.OTTO9_GETTOUCH_TEXT);
             this.setInputsInline(true);
-            this.setOutput(true, "Number");
+            this.setOutput(true, 'Number');
             this.setColour('#2a93e8');
             this.setTooltip(Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
-        }
+        },
     };
 
     Blocks['otto9_matrix'] = {
@@ -276,7 +366,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.setColour('#59646f');
             this.setTooltip(Blockly.Msg.OTTO9_MATRIX_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
-        }
+        },
     };
 
     Blocks['otto9_matrix8x8'] = {
@@ -393,26 +483,26 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.setColour('#59646f');
             this.setTooltip(Blockly.Msg.OTTO9_MOUTH_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
-        }
+        },
     };
 
     Blocks['otto9_mouth#'] = {
         init() {
             this.appendDummyInput();
-            this.appendValueInput("mouth").appendField(Blockly.Msg.OTTO9_MOUTH_TEXT);
+            this.appendValueInput('mouth').appendField(Blockly.Msg.OTTO9_MOUTH_TEXT);
             this.setInputsInline(true);
             this.setPreviousStatement(true, null);
             this.setNextStatement(true, null);
             this.setColour('#59646f');
             this.setTooltip(Blockly.Msg.OTTO9_MATRIX_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
-        }
+        },
     };
 
     Blocks['otto9_matrixp'] = {
         init() {
             this.appendDummyInput().appendField('pixel X');
-            this.appendValueInput('X').setCheck('Number').appendField("Y");
+            this.appendValueInput('X').setCheck('Number').appendField('Y');
             this.appendValueInput('Y').setCheck('Number');
             this.setInputsInline(true);
             this.setPreviousStatement(true, null);
@@ -420,7 +510,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.setColour('#59646f');
             this.setTooltip(Blockly.Msg.OTTO9_MATRIX_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
-        }
+        },
     };
 
     Blocks['otto9_matrix_text'] = {
@@ -434,7 +524,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.setColour('#59646f');
             this.setTooltip(Blockly.Msg.OTTO9_MATRIX_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
-        }
+        },
     };
 
     Blocks['otto9_matrix_brightness'] = {
@@ -448,7 +538,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.setColour('#59646f');
             this.setTooltip(Blockly.Msg.matrice8x8_del_tooltip);
             this.setHelpUrl(Blockly.Msg.matrice8x8_helpurl);
-        }
+        },
     };
 
     Blocks['otto9_clear'] = {
@@ -461,7 +551,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.setColour('#59646f');
             this.setTooltip(Blockly.Msg.OTTO9_CLEAR_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
-        }
+        },
     };
 
     Blocks['otto9_arms'] = {
@@ -476,6 +566,6 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.setColour('#59646f');
             this.setTooltip(Blockly.Msg.OTTO9_ARMS_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
-        }
+        },
     };
 }

@@ -1,4 +1,36 @@
 export default function define(Python: Blockly.BlockGenerators) {
+    Python['otto9_init'] = (block) => {
+        const ll = block.getFieldValue('LL');
+        const rl = block.getFieldValue( 'RL');
+        const lf = block.getFieldValue( 'LF');
+        const rf = block.getFieldValue( 'RF');
+        const cali = block.getFieldValue('Cali');
+        const noise = block.getFieldValue( 'Noise');
+        const buzzer = block.getFieldValue( 'Buzzer');
+        const echo = block.getFieldValue( 'Echo');
+        const trigger = block.getFieldValue( 'Trigger');
+        Blockly.Python.definitions_['import_otto'] = 'import otto9';
+        Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
+        return `Otto.init(${ll}, ${rl}, ${lf}, ${rf}, ${cali}, ${noise}, ${buzzer}, ${echo}, ${trigger})\n`;
+    };
+
+    Python['otto9_inith'] = (block) => {
+        const ll = block.getFieldValue('LL');
+        const rl = block.getFieldValue( 'RL');
+        const lf = block.getFieldValue( 'LF');
+        const rf = block.getFieldValue( 'RF');
+        const la = block.getFieldValue( 'LA');
+        const ra = block.getFieldValue( 'RA');
+        const cali = block.getFieldValue('Cali');
+        const noise = block.getFieldValue( 'Noise');
+        const buzzer = block.getFieldValue( 'Buzzer');
+        const echo = block.getFieldValue( 'Echo');
+        const trigger = block.getFieldValue( 'Trigger');
+        Blockly.Python.definitions_['import_otto'] = 'import otto9';
+        Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
+        return `Otto.initHUMANOID(${ll}, ${rl}, ${lf}, ${rf}, ${la}, ${ra}, ${cali}, ${noise}, ${buzzer}, ${echo}, ${trigger})\n`;
+    };
+
     Python['otto9_home'] = (block) => {
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';

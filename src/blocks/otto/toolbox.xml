@@ -1,89 +1,109 @@
 <category name="OTTO" colour="#32D900">
-  <block type="otto9_home"></block>
-  <block type="otto9_calibration">
-    <value name="LL">
-      <shadow type="math_number">
-        <field name="NUM">0</field>
-      </shadow>
-    </value>
-    <value name="RL">
-      <shadow type="math_number">
-        <field name="NUM">0</field>
-      </shadow>
-    </value>
-    <value name="LF">
-      <shadow type="math_number">
-        <field name="NUM">0</field>
-      </shadow>
-    </value>
-    <value name="RF">
-      <shadow type="math_number">
-        <field name="NUM">0</field>
-      </shadow>
-    </value>
-    <value name="LA">
-      <shadow type="math_number">
-        <field name="NUM">0</field>
-      </shadow>
-    </value>
-    <value name="RA">
-      <shadow type="math_number">
-        <field name="NUM">0</field>
-      </shadow>
-    </value>
-  </block>
-  <block type="otto9_eeprom"></block>
-  <block type="otto9_move"></block>
-  <block type="otto9_dance"></block>
-  <block type="otto9_do"></block>
-  <block type="otto9_gesture"></block>
-  <block type="otto9_sound"></block>
-  <block type="otto9_tone"></block>
-  <category name="Humanoid" colour="#2a93e8">
-    <block type="otto9_arms"></block>
-  </category>
-  <category name="Sensors" colour="#2a93e8">
-    <block type="otto9_getdistance"></block>
-    <block type="otto9_getnoise"></block>
-    <block type="otto9_touchbutton"></block>
-  </category>
+    <block type="otto9_init">
+    </block>
+    <block type="otto9_home">
+    </block>
+    <block type="otto9_calibration">
+        <value name="LL">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+        <value name="RL">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+        <value name="LF">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+        <value name="RF">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+        <value name="LA">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+        <value name="RA">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+    </block>
+    <block type="otto9_eeprom">
+    </block>
+    <block type="otto9_move">
+    </block>
+    <block type="otto9_dance">
+    </block>
+    <block type="otto9_do">
+    </block>
+    <block type="otto9_gesture">
+    </block>
+    <block type="otto9_sound">
+    </block>
+    <block type="otto9_tone">
+    </block>
+    <category name="Humanoid" colour="#2a93e8">
+        <block type="otto9_inith">
+        </block>
+        <block type="otto9_arms">
+        </block>
+    </category>
+    <category name="Sensors" colour="#2a93e8">
+        <block type="otto9_getdistance">
+        </block>
+        <block type="otto9_getnoise">
+        </block>
+        <block type="otto9_touchbutton">
+        </block>
+    </category>
 </category>
 <category name="LED Mouth" colour="#59646f">
-<block type="otto9_matrix"></block>
-<block type="otto9_matrix8x8"></block>
-<block type="otto9_mouth"></block>
+<block type="otto9_matrix">
+</block>
+<block type="otto9_matrix8x8">
+</block>
+<block type="otto9_mouth">
+</block>
 <block type="otto9_mouth#">
-  <value name="mouth">
-    <shadow type="math_number">
-      <field name="NUM">10</field>
-    </shadow>
-  </value>
+    <value name="mouth">
+        <shadow type="math_number">
+            <field name="NUM">10</field>
+        </shadow>
+    </value>
 </block>
 <block type="otto9_matrixp">
-  <value name="X">
-    <shadow type="math_number">
-      <field name="NUM">0</field>
-    </shadow>
-  </value>
-  <value name="Y">
-    <shadow type="math_number">
-      <field name="NUM">0</field>
-    </shadow>
-  </value>
+    <value name="X">
+        <shadow type="math_number">
+            <field name="NUM">0</field>
+        </shadow>
+    </value>
+    <value name="Y">
+        <shadow type="math_number">
+            <field name="NUM">0</field>
+        </shadow>
+    </value>
 </block>
 <block type="otto9_matrix_text">
-  <value name="input">
-    <shadow type="text">
-      <field name="TEXT">I AM OTTO</field>
-    </shadow>
-  </value>
+    <value name="input">
+        <shadow type="text">
+            <field name="TEXT">I AM OTTO</field>
+        </shadow>
+    </value>
 </block>
 <block type="otto9_matrix_brightness">
-  <value name="brightness">
-    <shadow type="math_number">
-      <field name="NUM">15</field>
-    </shadow>
-  </value>
+    <value name="brightness">
+        <shadow type="math_number">
+            <field name="NUM">15</field>
+        </shadow>
+    </value>
 </block>
-<block type="otto9_clear"></block>
+<block type="otto9_clear">
+</block>
 </category>

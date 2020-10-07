@@ -63,6 +63,10 @@ export default class BlocklyView extends Component<BlocklyViewProps, {}> {
     Blockly.mainWorkspace.clear();
 
     if (typeof xml === 'string') {
+      if (xml === '') {
+        xml = '<xml xmlns="https://developers.google.com/blockly/xml">' +
+              '</xml>';
+      }
       const textToDom = Blockly.Xml.textToDom(xml);
 
       Blockly.Xml.domToWorkspace(textToDom, Blockly.mainWorkspace);
