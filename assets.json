@@ -12,6 +12,7 @@
     "blockly/blockly_compressed.js",
     "blockly/python_compressed.js",
     "blockly/msg/js/en.js",
+    "blockly/msg/js/msg.js",
     "lib/ace9/ace.js",
     "lib/ace9/mode-python.js",
     "lib/ace9/theme-monokai.js",
