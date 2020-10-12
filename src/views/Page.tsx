@@ -8,9 +8,10 @@ import TerminalView from './TerminalView';
 import FileModel from './FileModal';
 import Status from './Status';
 import { App, EduBlocksXML, PythonScript, FileType, DocumentState, BlocklyDocumentState, PythonDocumentState, FileSelectResult } from '../types';
-import { sleep, joinDirNameAndFileName, getFileType, getBaseName } from '../lib';
+import { sleep, joinDirNameAndFileName, getFileType, getBaseName, readText } from '../lib';
 import { MpFile, SocketStatus } from '../micropython-ws';
 import SelectModal, { SelectModalOption } from './SelectModal';
+import Path = require('path');
 
 type AdvancedFunction = 'New Python Script' | 'Export' | 'Set As Startup Script';
 const AdvancedFunctions: AdvancedFunction[] = ['New Python Script', 'Export', 'Set As Startup Script'];
@@ -305,6 +306,12 @@ export default class Page extends Component<PageProps, PageState> {
     }
   }
 
+  private openTerminal() {
+     this.setState({ terminalOpen: true });
+     this.terminalView.focus();
+     setTimeout(() => this.terminalView.focus(), 250);
+  }
+
   public openFileListModal() {
     this.setState({ modal: 'File' });
   }
@@ -398,8 +405,12 @@ export default class Page extends Component<PageProps, PageState> {
     }
   }
 
-  private onSelectFile(file: File) {
-    this.props.app.sendFile(file);
+  private async onSelectFile(file: File) {
+    const fileName = file.name;
+    const fileData = await readText(file);
+
+    this.handleFileContents('/user', fileName, fileData);
+    this.setState({ dirty: true });
   }
 
   private onTerminalClose() {
@@ -477,6 +488,7 @@ export default class Page extends Component<PageProps, PageState> {
         <Nav
           onFunction={() => this.openAdvancedFunctionDialog()}
           onRun={() => this.run()}
+          onTerminal={() => this.openTerminal()}
           onDownloadPython={() => { }}
           onOpen={() => this.openFileListModal()}
           onSave={() => this.save()}

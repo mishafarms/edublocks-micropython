@@ -58,9 +58,13 @@
     <category name="Sensors" colour="#2a93e8">
         <block type="otto9_getdistance">
         </block>
+        <block type="otto9_obstacle">
+        </block>
         <block type="otto9_getnoise">
         </block>
         <block type="otto9_touchbutton">
+        </block>
+        <block type="otto9_touched">
         </block>
     </category>
 </category>

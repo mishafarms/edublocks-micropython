@@ -281,6 +281,20 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
         },
     };
 
+    Blocks['otto9_obstacle'] = {
+        init() {
+            this.appendDummyInput()
+                .appendField(new Blockly.FieldImage('blockly/media/sensor_ultrasound.png', 48, 48, "*"))
+                .appendField(Blockly.Msg.OTTO9_GETOBSTACLE_TEXT)
+                .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_OBSTACLE_CHOICE), "obstacle");
+            this.setInputsInline(true);
+            this.setOutput(true, 'Boolean');
+            this.setColour('#2a93e8');
+            this.setTooltip(Blockly.Msg.OTTO9_GETDISTANCE_TOOLTIP);
+            this.setHelpUrl(Blockly.Msg.OTTO9_DIY_URL);
+        },
+    };
+
     Blocks['otto9_getnoise'] = {
         init() {
             this.appendDummyInput()
@@ -305,6 +319,20 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.setOutput(true, 'Number');
             this.setColour('#2a93e8');
             this.setTooltip(Blockly.Msg.OTTO9_GETTOUCH_TOOLTIP);
+            this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
+        },
+    };
+
+    Blocks['otto9_touched'] = {
+        init() {
+            this.appendDummyInput()
+                .appendField(new Blockly.FieldImage('blockly/media/sensor_touch.png', 48, 48, '*'))
+                .appendField(' = ')
+                .appendField(Blockly.Msg.OTTO9_GETTOUCHED_TEXT);
+            this.setInputsInline(true);
+            this.setOutput(true, 'Boolean');
+            this.setColour('#2a93e8');
+            this.setTooltip(Blockly.Msg.OTTO9_GETTOUCHED_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
         },
     };

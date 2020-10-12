@@ -1463,6 +1463,7 @@ declare module Blockly {
     const Python: {
         statementToCode(block: Block, d: 'DO' | 'NAME' | 'VALUE'): string;
         addLoopTrap(code: string, id: string): string;
+        addReservedWords(words: string): void;
         valueToCode(block: Block, name: string, option?: any): string;
 
         workspaceToCode(workspace: Blockly.Workspace): string;

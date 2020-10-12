@@ -5,9 +5,6 @@ let toolBoxXml = '';
 
 toolBoxXml += '<xml>';
 
-// add the builtin blocks
-toolBoxXml += fs.readFileSync(path.join(__dirname, '..', '..', 'src', 'blocks', 'builtin', 'toolbox.xml'));
-
 import basicDefs from './basic/definitions';
 import basicGens from './basic/generators';
 basicDefs(Blockly.Blocks);
@@ -25,6 +22,9 @@ import ottoGens from './otto/generators';
 ottoDefs(Blockly.Blocks);
 ottoGens(Blockly.Python as any);
 toolBoxXml += fs.readFileSync(path.join(__dirname, '..', '..', 'src', 'blocks', 'otto', 'toolbox.xml'));
+
+// add the builtin blocks
+toolBoxXml += fs.readFileSync(path.join(__dirname, '..', '..', 'src', 'blocks', 'builtin', 'toolbox.xml'));
 
 // add variables and functions to the end
 toolBoxXml += '<category name="Variables" custom="VARIABLE" colour="330">\n</category>\n';

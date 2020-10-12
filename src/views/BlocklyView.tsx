@@ -34,6 +34,9 @@ export default class BlocklyView extends Component<BlocklyViewProps, {}> {
       const workspace = Blockly.inject(this.blocklyDiv, {
         media: 'blockly/media/',
         toolbox,
+        zoom:
+            {controls: true,
+              wheel: true},
       }) as Blockly.WorkspaceSvg;
 
       workspace.addChangeListener(() => {
@@ -47,6 +50,8 @@ export default class BlocklyView extends Component<BlocklyViewProps, {}> {
 
       Blockly.svgResize(workspace);
     }
+
+    Blockly.Python.addReservedWords('otto9,Otto,gestures,songs,notes,mouths,TouchPin,');
   }
 
   private getXml(): string {
