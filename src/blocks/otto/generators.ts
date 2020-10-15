@@ -11,7 +11,7 @@ export default function define(Python: Blockly.BlockGenerators) {
         const trigger = block.getFieldValue( 'Trigger');
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
-        Blockly.Python.definitions_['init_otto'] = `Otto.init(${ll}, ${rl}, ${lf}, ${rf}, ${cali}, ${noise}, ${buzzer}, ${echo}, ${trigger})\n`;
+        Blockly.Python.definitions_['init_otto'] = `Otto.init(${ll}, ${rl}, ${lf}, ${rf}, ${cali}, ${noise}, ${buzzer}, ${trigger}, ${echo})\n`;
         return '';
     };
 
@@ -29,7 +29,7 @@ export default function define(Python: Blockly.BlockGenerators) {
         const trigger = block.getFieldValue( 'Trigger');
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
-        Blockly.Python.definitions_['init_otto'] = `Otto.initHUMANOID(${ll}, ${rl}, ${lf}, ${rf}, ${la}, ${ra}, ${cali}, ${noise}, ${buzzer}, ${echo}, ${trigger})\n`;
+        Blockly.Python.definitions_['init_otto'] = `Otto.initHUMANOID(${ll}, ${rl}, ${lf}, ${rf}, ${la}, ${ra}, ${cali}, ${noise}, ${buzzer}, ${trigger}, ${echo})\n`;
         return '';
     };
 
@@ -163,23 +163,23 @@ export default function define(Python: Blockly.BlockGenerators) {
     };
 
     Python['otto9_getdistance'] = (block) => {
-        Blockly.Python.definitions_['import_otto9'] = 'import otto9';
-        Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+        Blockly.Python.definitions_['import_otto'] = 'import otto9';
+        Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
         let code = `Otto.getDistance()`;
         return [code, Blockly.Python.ORDER_ATOMIC];
     };
 
     Python['otto9_obstacle'] = (block) => {
         const dropdown_obstacle = block.getFieldValue('obstacle');
-        Blockly.Python.definitions_['import_otto9'] = 'import otto9';
-        Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+        Blockly.Python.definitions_['import_otto'] = 'import otto9';
+        Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
         let code = '(Otto.getDistance() < ' + dropdown_obstacle + ')';
         return [code, Blockly.Python.ORDER_ATOMIC];
     };
 
     Python['otto9_getnoise'] = (block) => {
-        Blockly.Python.definitions_['import_otto9'] = 'import otto9';
-        Blockly.Python.definitions_['declare_otto9'] = 'Otto = otto9.Otto9()\n';
+        Blockly.Python.definitions_['import_otto'] = 'import otto9';
+        Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
         let code = `Otto.getNoise()`;
         return [code, Blockly.Python.ORDER_ATOMIC];
     };
@@ -252,7 +252,7 @@ export default function define(Python: Blockly.BlockGenerators) {
     };
 
     Python['otto9_mouth#'] = (block) => {
-        const valuemouth = Blockly.Python.valueToCode(block, 'mouth', Blockly.Python.ORDER_ATOMIC);;
+        const valuemouth = Blockly.Python.valueToCode(block, 'mouth', Blockly.Python.ORDER_ATOMIC);
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['import_time'] = 'import time';
         Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
@@ -281,7 +281,7 @@ export default function define(Python: Blockly.BlockGenerators) {
     };
 
     Python['otto9_matrix_brightness'] = (block) => {
-        const brightness = Blockly.Python.valueToCode(block, 'brightness', Blockly.Python.ORDER_ATOMIC);;
+        const brightness = Blockly.Python.valueToCode(block, 'brightness', Blockly.Python.ORDER_ATOMIC);
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
         Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMATRIX(19, 5, 18, 1)\n';

@@ -69,8 +69,8 @@ function getSample(filePath: string) {
     return fs.readFileSync(path.join(__dirname, 'resources', 'samples', 'led_strip.xml'), 'utf-8');
   }
 
-  if (fileName === 'pin_reader.xml') {
-    return fs.readFileSync(path.join(__dirname, 'resources', 'samples', 'pin_reader.xml'), 'utf-8');
+  if (fileName === 'calibrate_otto.xml') {
+    return fs.readFileSync(path.join(__dirname, 'resources', 'samples', 'calibrate_otto.xml'), 'utf-8');
   }
 
   return '';

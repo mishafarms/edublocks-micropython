@@ -286,7 +286,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
     },
   };
 
-  Blocks['time'] = {
+  Blocks['import_time'] = {
     init() {
       this.appendDummyInput()
         .appendField('import time');
@@ -313,13 +313,31 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
   Blocks['sleep'] = {
     init() {
       this.appendDummyInput()
-        .appendField('time.sleep(')
-        .appendField(new Blockly.FieldTextInput('1'), 'sleepTime')
+          .appendField('time.sleep(');
+      this.appendValueInput('sleepTime');
+      this.appendDummyInput()
         .appendField(')');
+      this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(336);
       this.setTooltip('Wait for a given amount of seconds.');
+      this.setHelpUrl('http://www.example.com/');
+    },
+  };
+
+  Blocks['sleepms'] = {
+    init() {
+      this.appendDummyInput()
+          .appendField('time.sleep_ms(');
+      this.appendValueInput('sleepTime');
+      this.appendDummyInput()
+          .appendField(')');
+      this.setInputsInline(true);
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(336);
+      this.setTooltip('Wait for a given amount of milliseconds.');
       this.setHelpUrl('http://www.example.com/');
     },
   };

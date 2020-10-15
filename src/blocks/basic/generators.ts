@@ -147,10 +147,10 @@ export default function define(Python: Blockly.BlockGenerators) {
     return code;
   };
 
-  Python['time'] = function (block) {
+  Python['import_time'] = function (block) {
     // TODO: Assemble Python into code variable.
-    const code = 'import time\n';
-    return code;
+    Blockly.Python.definitions_['import_time'] = 'import time\n';
+    return '';
   };
 
   Python['import_math'] = function (block) {
@@ -159,8 +159,16 @@ export default function define(Python: Blockly.BlockGenerators) {
   };
 
   Python['sleep'] = function (block) {
-    const text_sleeptime = block.getFieldValue('sleepTime');
+    const text_sleeptime = Blockly.Python.valueToCode(block, 'sleepTime', Blockly.Python.ORDER_ATOMIC);
+    Blockly.Python.definitions_['import_time'] = 'import time\n';
     const code = 'time.sleep(' + text_sleeptime + ')\n';
+    return code;
+  };
+
+  Python['sleepms'] = function (block) {
+    const text_sleeptime = Blockly.Python.valueToCode(block, 'sleepTime', Blockly.Python.ORDER_ATOMIC);
+    Blockly.Python.definitions_['import_time'] = 'import time\n';
+    const code = 'time.sleep_ms(' + text_sleeptime + ')\n';
     return code;
   };
 

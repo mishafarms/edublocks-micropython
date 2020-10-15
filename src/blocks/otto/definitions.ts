@@ -30,10 +30,10 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
                 .appendField(new Blockly.FieldNumber(4, 0, 40), 'Buzzer');
             this.appendDummyInput()
                 .setAlign(Blockly.ALIGN_RIGHT)
+                .appendField('Trigger')
+                .appendField(new Blockly.FieldNumber(2, 0, 40), 'Trigger')
                 .appendField('Echo')
-                .appendField(new Blockly.FieldNumber(2, 0, 40), 'Echo')
-                .appendField('Buzzer')
-                .appendField(new Blockly.FieldNumber(15, 0, 40), 'Trigger');
+                .appendField(new Blockly.FieldNumber(39, 0, 40), 'Echo');
             this.setInputsInline(false);
             this.setPreviousStatement(true, null);
             this.setNextStatement(true, null);
@@ -73,15 +73,15 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.appendDummyInput()
                 .setAlign(Blockly.ALIGN_RIGHT)
                 .appendField('Noise')
-                .appendField(new Blockly.FieldNumber(35, 0, 40), 'Noise')
+                .appendField(new Blockly.FieldNumber(34, 0, 40), 'Noise')
                 .appendField('Buzzer')
                 .appendField(new Blockly.FieldNumber(4, 0, 40), 'Buzzer');
             this.appendDummyInput()
                 .setAlign(Blockly.ALIGN_RIGHT)
+                .appendField('Trigger')
+                .appendField(new Blockly.FieldNumber(2, 0, 40), 'Trigger')
                 .appendField('Echo')
-                .appendField(new Blockly.FieldNumber(2, 0, 40), 'Echo')
-                .appendField('Buzzer')
-                .appendField(new Blockly.FieldNumber(15, 0, 40), 'Trigger');
+                .appendField(new Blockly.FieldNumber(39, 0, 40), 'Echo');
             this.setInputsInline(false);
             this.setPreviousStatement(true, null);
             this.setNextStatement(true, null);

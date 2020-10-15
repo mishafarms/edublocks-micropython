@@ -28,7 +28,7 @@ toolBoxXml += fs.readFileSync(path.join(__dirname, '..', '..', 'src', 'blocks', 
 
 // add variables and functions to the end
 toolBoxXml += '<category name="Variables" custom="VARIABLE" colour="330">\n</category>\n';
-toolBoxXml += '<category name="Functions" custom="PROCEDURE"  colour="200">\n</category>\n';
+toolBoxXml += '<category name="Functions" custom="PROCEDURE"  colour="290">\n</category>\n';
 
 // import gpiozeroDefs from './gpiozero/definitions';
 // import gpiozeroGens from './gpiozero/generators';
