@@ -29,6 +29,9 @@ export default function Nav(props: NavProps) {
             <a class="brand">
                 <img class="logo" src="images/logo.png"/>
             </a>
+            <a class="brand">
+                <img class="logo" src="images/logo_built_on_knockout.png"/>
+            </a>
 
             <div class="menu">
                 <label class="button" for="myfile">Upload a file:</label>

@@ -25,7 +25,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.appendDummyInput()
                 .setAlign(Blockly.ALIGN_RIGHT)
                 .appendField('Noise')
-                .appendField(new Blockly.FieldNumber(34, 0, 40), 'Noise')
+                .appendField(new Blockly.FieldNumber(35, 0, 40), 'Noise')
                 .appendField('Buzzer')
                 .appendField(new Blockly.FieldNumber(4, 0, 40), 'Buzzer');
             this.appendDummyInput()
@@ -73,7 +73,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.appendDummyInput()
                 .setAlign(Blockly.ALIGN_RIGHT)
                 .appendField('Noise')
-                .appendField(new Blockly.FieldNumber(34, 0, 40), 'Noise')
+                .appendField(new Blockly.FieldNumber(35, 0, 40), 'Noise')
                 .appendField('Buzzer')
                 .appendField(new Blockly.FieldNumber(4, 0, 40), 'Buzzer');
             this.appendDummyInput()
@@ -333,6 +333,34 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.setOutput(true, 'Boolean');
             this.setColour('#2a93e8');
             this.setTooltip(Blockly.Msg.OTTO9_GETTOUCHED_TOOLTIP);
+            this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
+        },
+    };
+
+    Blocks['otto9_batvolt'] = {
+        init() {
+            this.appendDummyInput()
+                .appendField(new Blockly.FieldImage('blockly/media/charged-battery.png', 48, 48, '*'))
+                .appendField(' = ')
+                .appendField(Blockly.Msg.OTTO9_BATVOLT_TEXT);
+            this.setInputsInline(true);
+            this.setOutput(true, 'Number');
+            this.setColour('#2a93e8');
+            this.setTooltip(Blockly.Msg.OTTO9_BATTERY_TOOLTIP);
+            this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
+        },
+    };
+
+    Blocks['otto9_batpercent'] = {
+        init() {
+            this.appendDummyInput()
+                .appendField(new Blockly.FieldImage('blockly/media/charged-battery.png', 48, 48, '*'))
+                .appendField(' = ')
+                .appendField(Blockly.Msg.OTTO9_BATPERCENT_TEXT);
+            this.setInputsInline(true);
+            this.setOutput(true, 'Number');
+            this.setColour('#2a93e8');
+            this.setTooltip(Blockly.Msg.OTTO9_BATTERY_TOOLTIP);
             this.setHelpUrl(Blockly.Msg.OTTO9_HUMANOID_URL);
         },
     };
