@@ -29,14 +29,16 @@ export default class BlocklyView extends Component<BlocklyViewProps, {}> {
 
   protected componentDidMount() {
     if (this.blocklyDiv) {
-      const toolbox = getToolBoxXml();
+      let toolboxText = getToolBoxXml();
+      const toolboxXml = Blockly.Xml.textToDom(toolboxText);
 
       const workspace = Blockly.inject(this.blocklyDiv, {
         media: 'blockly/media/',
-        toolbox,
+        toolbox: toolboxXml,
         zoom:
             {controls: true,
               wheel: true},
+        oneBasedIndex: true,
       }) as Blockly.WorkspaceSvg;
 
       workspace.addChangeListener(() => {

@@ -369,12 +369,12 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
         init() {
             this.appendDummyInput()
                 .appendField('  ')
-                .appendField('1')
+                .appendField(' 1')
                 .appendField('  2')
-                .appendField('  3')
-                .appendField(' 4')
-                .appendField(' 5')
-                .appendField('  6');
+                .appendField('   3')
+                .appendField('   4')
+                .appendField('  5')
+                .appendField('   6');
             Blockly.FieldCheckbox.CHECK_CHAR = '▉';
             this.appendDummyInput()
                 .appendField('1 ')
@@ -430,13 +430,13 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.appendDummyInput()
                 .appendField('  ')
                 .appendField(' 0')
-                .appendField(' 1')
-                .appendField(' 2')
-                .appendField('  3')
+                .appendField('  1')
+                .appendField('   2')
+                .appendField('   3')
                 .appendField('  4')
-                .appendField(' 5')
-                .appendField(' 6')
-                .appendField(' 7');
+                .appendField('   5')
+                .appendField('  6')
+                .appendField('  7');
             Blockly.FieldCheckbox.CHECK_CHAR = '▉';
             this.appendDummyInput()
                 .appendField('0 ')

@@ -3,7 +3,7 @@ import path = require('path');
 
 let toolBoxXml = '';
 
-toolBoxXml += '<xml>';
+toolBoxXml += '<xml xmlns="https://developers.google.com/blockly/xml">';
 
 import basicDefs from './basic/definitions';
 import basicGens from './basic/generators';

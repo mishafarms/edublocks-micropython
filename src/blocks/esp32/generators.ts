@@ -53,16 +53,25 @@ export default function define(Python: Blockly.BlockGenerators) {
   };
 
   Python['led_colour_set'] = (block) => {
+    const functionName = Blockly.Python.provideFunction_(
+        'convert_rgb',
+        ['def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + '(colour):',
+          '  if isinstance(colour, str) and len(colour) == 7:',
+          '     r = int(colour[1:3], 16)',
+          '     g = int(colour[3:5], 16)',
+          '     b = int(colour[5:7], 16)',
+          '  elif isinstance(colour, tuple):',
+          '    r, g, b = colour',
+          '  else:',
+          '     r, g, b = 0, 0, 0',
+          '  return r, g, b']);
     const np_name = Blockly.Python.valueToCode(block, 'np_name', Blockly.Python.ORDER_ATOMIC);
-    const index = Blockly.Python.valueToCode(block, 'index', Blockly.Python.ORDER_ATOMIC);
-    const colour1 = block.getFieldValue('colour1');
+    const index = Blockly.Python.getAdjustedInt(block, 'index');
+    const colour1 = Blockly.Python.valueToCode(block, 'colour1', Blockly.Python.ORDER_ATOMIC);
     Blockly.Python.definitions_['import_neopixel'] = 'import neopixel\n';
 
-    const r = parseInt(colour1.substr(1, 2), 16);
-    const g = parseInt(colour1.substr(3, 2), 16);
-    const b = parseInt(colour1.substr(5, 2), 16);
-
-    return `${np_name}[${index}] = (${r}, ${g}, ${b}) # Colour = ${colour1}\n`;
+    const code = np_name + '[' + index + '] = ' + functionName + '(' + colour1 + ') # Colour = ' + colour1 + '\n';
+    return code;
   };
 
   Python['neopixel_write'] = (block) => {

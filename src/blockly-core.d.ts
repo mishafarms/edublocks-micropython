@@ -1464,7 +1464,10 @@ declare module Blockly {
         statementToCode(block: Block, d: 'DO' | 'NAME' | 'VALUE'): string;
         addLoopTrap(code: string, id: string): string;
         addReservedWords(words: string): void;
+        getAdjustedInt(block: Block, name: string, delta?: number, negate?: boolean): any;
         valueToCode(block: Block, name: string, option?: any): string;
+        quote_(code: any): string
+        provideFunction_(name: string, func: [string, any]): string;
 
         workspaceToCode(workspace: Blockly.Workspace): string;
 
@@ -1478,7 +1481,11 @@ declare module Blockly {
             getName(name: string, type: any): string;
         }
 
+        FUNCTION_NAME_PLACEHOLDER_: any;
+
         ORDER_ATOMIC: any;
+        ORDER_FUNCTION_CALL: any;
+        ORDER_NONE: any;
     };
 
     class Bubble extends Bubble__Class {
@@ -6138,6 +6145,5 @@ declare module Blockly {
          */
         position(): void;
     }
-
 }
-  
+

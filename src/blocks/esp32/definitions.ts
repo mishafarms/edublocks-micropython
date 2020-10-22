@@ -109,9 +109,10 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
         .appendField('[');
       this.appendValueInput('index').setCheck('Number');
       this.appendDummyInput()
-        .appendField('] = (')
-        .appendField(new Blockly.FieldColour('colour1'), 'colour1')
-        .appendField(')');
+          .appendField('] =');
+      this.appendValueInput('colour1')
+          .setAlign(Blockly.ALIGN_RIGHT);
+      this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(120);
