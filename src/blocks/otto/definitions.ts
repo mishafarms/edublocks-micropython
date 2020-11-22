@@ -9,15 +9,15 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
             this.appendDummyInput()
                 .setAlign(Blockly.ALIGN_RIGHT)
                 .appendField('LL')
-                .appendField(new Blockly.FieldNumber(33, 0, 40), 'LL')
+                .appendField(new Blockly.FieldNumber(23, 0, 40), 'LL')
                 .appendField('RL')
-                .appendField(new Blockly.FieldNumber(25, 0, 40), 'RL');
+                .appendField(new Blockly.FieldNumber(22, 0, 40), 'RL');
             this.appendDummyInput()
                 .setAlign(Blockly.ALIGN_RIGHT)
                 .appendField('LF')
-                .appendField(new Blockly.FieldNumber(26, 0, 40), 'LF')
+                .appendField(new Blockly.FieldNumber(33, 0, 40), 'LF')
                 .appendField('RF')
-                .appendField(new Blockly.FieldNumber(27, 0, 40), 'RF');
+                .appendField(new Blockly.FieldNumber(25, 0, 40), 'RF');
             this.appendDummyInput()
                 .setAlign(Blockly.ALIGN_RIGHT)
                 .appendField('Load Calibrate')
@@ -351,12 +351,12 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
         },
     };
 
-    Blocks['otto9_batpercent'] = {
+    Blocks['otto9_batlevel'] = {
         init() {
             this.appendDummyInput()
                 .appendField(new Blockly.FieldImage('blockly/media/charged-battery.png', 48, 48, '*'))
                 .appendField(' = ')
-                .appendField(Blockly.Msg.OTTO9_BATPERCENT_TEXT);
+                .appendField(Blockly.Msg.OTTO9_BATLEVEL_TEXT);
             this.setInputsInline(true);
             this.setOutput(true, 'Number');
             this.setColour('#2a93e8');

@@ -199,16 +199,18 @@ export default function define(Python: Blockly.BlockGenerators) {
     };
 
     Python['otto9_batvolt'] = (block) => {
-        Blockly.Python.definitions_['import_battery'] = 'import batReader9\n';
-        Blockly.Python.definitions_['bat_pin'] = 'batPin = batReader9.batReader9(34)';
-        let code = `batPin.readBatVoltage()`;
+        Blockly.Python.definitions_['import_otto'] = 'import otto9';
+        Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
+        Blockly.Python.definitions_['battery_otto'] = 'Otto.initBatLevel(34)';
+        let code = `Otto.getBatteryVoltage()`;
         return [code, Blockly.Python.ORDER_ATOMIC];
     };
 
-    Python['otto9_batpercent'] = (block) => {
-        Blockly.Python.definitions_['import_battery'] = 'import batReader9\n';
-        Blockly.Python.definitions_['bat_pin'] = 'batPin = batReader9.batReader9(34)';
-        let code = `batPin.readBatPercent()`;
+    Python['otto9_batlevel'] = (block) => {
+        Blockly.Python.definitions_['import_otto'] = 'import otto9';
+        Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
+        Blockly.Python.definitions_['battery_otto'] = 'Otto.initBatLevel(34)';
+        let code = `Otto.getBatteryLevel()`;
         return [code, Blockly.Python.ORDER_ATOMIC];
     };
 

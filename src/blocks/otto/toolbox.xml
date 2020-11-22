@@ -68,7 +68,7 @@
         </block>
         <block type="otto9_batvolt">
         </block>
-        <block type="otto9_batpercent">
+        <block type="otto9_batlevel">
         </block>
     </category>
 </category>
