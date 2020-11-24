@@ -101,7 +101,7 @@ export default function define(Python: Blockly.BlockGenerators) {
         Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
 
         let code = '';
-        switch(dropdown_otto_dance_movement) {
+        switch (dropdown_otto_dance_movement) {
             case 'moonwalkerLEFT':
                 code = 'Otto.moonwalker(1, ' + dropdown_otto_move_speed + ', ' + dropdown_otto_dance_size + ', 1)\n';
                 break;
@@ -139,7 +139,7 @@ export default function define(Python: Blockly.BlockGenerators) {
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['import_gestures'] = 'import gestures';
         Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
-        Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMATRIX(19, 5, 18, 1)\n';
+        Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMATRIX(5, 18, 19, 1)\n';
         let code = 'Otto.playGesture(' + 'gestures.' + dropdown_otto_gesture.toUpperCase() + ')\n';
         return code;
     };
@@ -186,14 +186,14 @@ export default function define(Python: Blockly.BlockGenerators) {
 
     Python['otto9_touchbutton'] = (block) => {
         Blockly.Python.definitions_['import_touchpad'] = 'from machine import TouchPad, Pin\n';
-        Blockly.Python.definitions_['touch_pin'] = 'touchPin = TouchPad(Pin(14))'
+        Blockly.Python.definitions_['touch_pin'] = 'touchPin = TouchPad(Pin(14))';
         let code = `touchPin.read()`;
         return [code, Blockly.Python.ORDER_ATOMIC];
     };
 
     Python['otto9_touched'] = (block) => {
         Blockly.Python.definitions_['import_touchpad'] = 'from machine import TouchPad, Pin\n';
-        Blockly.Python.definitions_['touch_pin'] = 'touchPin = TouchPad(Pin(14))'
+        Blockly.Python.definitions_['touch_pin'] = 'touchPin = TouchPad(Pin(14))';
         let code = `(touchPin.read() < 500)`;
         return [code, Blockly.Python.ORDER_ATOMIC];
     };
@@ -217,7 +217,7 @@ export default function define(Python: Blockly.BlockGenerators) {
     Python['otto9_matrix'] = (block) => {
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
-        Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMATRIX(19, 5, 18, 1)\n';
+        Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMATRIX(5, 18, 19, 1)\n';
         let matrix = '0b';
         for (let i = 0; i < 30; i++) {
             if (block.getFieldValue('otto9_matrix_pixel' + i) === 'TRUE') {
@@ -233,7 +233,7 @@ export default function define(Python: Blockly.BlockGenerators) {
     Python['otto9_matrix8x8'] = (block) => {
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
-        Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMATRIX(19, 5, 18, 1)\n';
+        Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMATRIX(5, 18, 19, 1)\n';
         let code = '';
         for (let i = 0; i < 64; i++) {
 
@@ -255,7 +255,7 @@ export default function define(Python: Blockly.BlockGenerators) {
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['import_mouths'] = 'import mouths';
         Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
-        Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMATRIX(19, 5, 18, 1)\n';
+        Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMATRIX(5, 18, 19, 1)\n';
 
         let code = 'Otto.putMouth(';
 
@@ -272,7 +272,7 @@ export default function define(Python: Blockly.BlockGenerators) {
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['import_time'] = 'import time';
         Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
-        Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMATRIX(19, 5, 18, 1)\n';
+        Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMATRIX(5, 18, 19, 1)\n';
         return 'Otto.clearMouth()\n'
             + `Otto.writeText(str(${valuemouth}), 50) # show the data with a fast scroll\n`
             + 'time.sleep_ms(50)\n';
@@ -283,7 +283,7 @@ export default function define(Python: Blockly.BlockGenerators) {
         const valuey = Blockly.Python.valueToCode(block, 'Y', Blockly.Python.ORDER_ATOMIC);
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
-        Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMATRIX(19, 5, 18, 1)\n';
+        Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMATRIX(5, 18, 19, 1)\n';
         return 'Otto.setLed(' + valuex + ', ' + valuey + ', 1)\n';
     };
 
@@ -291,7 +291,7 @@ export default function define(Python: Blockly.BlockGenerators) {
         const text_input = Blockly.Python.valueToCode(block, 'input', Blockly.Python.ORDER_ATOMIC);
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
-        Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMATRIX(19, 5, 18, 1)\n';
+        Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMATRIX(5, 18, 19, 1)\n';
         return 'Otto.clearMouth()\n'
             + `Otto.writeText(${text_input}, 100) # limited to CAPITAL LETTERS NUMBERS : ; < >  = @, MAX.19 characters \n`;
     };
@@ -300,14 +300,14 @@ export default function define(Python: Blockly.BlockGenerators) {
         const brightness = Blockly.Python.valueToCode(block, 'brightness', Blockly.Python.ORDER_ATOMIC);
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
-        Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMATRIX(19, 5, 18, 1)\n';
+        Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMATRIX(5, 18, 19, 1)\n';
         return `Otto.matrixIntensity(${brightness}) #the brightness of the display. (0 to 15)\n`;
     };
 
     Python['otto9_clear'] = (block) => {
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
-        Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMATRIX(19, 5, 18, 1)\n';
+        Blockly.Python.definitions_['init_ledmatrix'] = 'Otto.initMATRIX(5, 18, 19, 1)\n';
         return 'Otto.clearMouth()\n';
     };
 

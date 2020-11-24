@@ -27,7 +27,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
                 .appendField('Noise')
                 .appendField(new Blockly.FieldNumber(35, 0, 40), 'Noise')
                 .appendField('Buzzer')
-                .appendField(new Blockly.FieldNumber(4, 0, 40), 'Buzzer');
+                .appendField(new Blockly.FieldNumber(15, 0, 40), 'Buzzer');
             this.appendDummyInput()
                 .setAlign(Blockly.ALIGN_RIGHT)
                 .appendField('Trigger')
@@ -75,7 +75,7 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
                 .appendField('Noise')
                 .appendField(new Blockly.FieldNumber(35, 0, 40), 'Noise')
                 .appendField('Buzzer')
-                .appendField(new Blockly.FieldNumber(4, 0, 40), 'Buzzer');
+                .appendField(new Blockly.FieldNumber(15, 0, 40), 'Buzzer');
             this.appendDummyInput()
                 .setAlign(Blockly.ALIGN_RIGHT)
                 .appendField('Trigger')
@@ -284,9 +284,9 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
     Blocks['otto9_obstacle'] = {
         init() {
             this.appendDummyInput()
-                .appendField(new Blockly.FieldImage('blockly/media/sensor_ultrasound.png', 48, 48, "*"))
+                .appendField(new Blockly.FieldImage('blockly/media/sensor_ultrasound.png', 48, 48, '*'))
                 .appendField(Blockly.Msg.OTTO9_GETOBSTACLE_TEXT)
-                .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_OBSTACLE_CHOICE), "obstacle");
+                .appendField(new Blockly.FieldDropdown(Blockly.Msg.OTTO9_OBSTACLE_CHOICE), 'obstacle');
             this.setInputsInline(true);
             this.setOutput(true, 'Boolean');
             this.setColour('#2a93e8');
