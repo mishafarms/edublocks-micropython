@@ -48,7 +48,8 @@ export default function define(Python: Blockly.BlockGenerators) {
         const ra = Blockly.Python.valueToCode(block, 'RA', Blockly.Python.ORDER_ATOMIC);
         Blockly.Python.definitions_['import_otto'] = 'import otto9';
         Blockly.Python.definitions_['declare_otto'] = 'Otto = otto9.Otto9()\n';
-        return `Otto.setTrims(${ll}, ${rl}, ${lf}, ${rf}, ${la}, ${ra})\n`;
+        return `Otto.setTrims(${ll}, ${rl}, ${lf}, ${rf}, ${la}, ${ra})\n` +
+            'Otto._moveServos(10, [90, 90, 90, 90, 90, 90])\n';
     };
 
     Python['otto9_eeprom'] = (block) => {
