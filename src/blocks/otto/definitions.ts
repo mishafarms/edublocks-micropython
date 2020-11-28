@@ -557,9 +557,14 @@ export default function define(Blocks: Blockly.BlockDefinitions) {
 
     Blocks['otto9_matrixp'] = {
         init() {
-            this.appendDummyInput().appendField('pixel X');
-            this.appendValueInput('X').setCheck('Number').appendField('Y');
-            this.appendValueInput('Y').setCheck('Number');
+            this.appendDummyInput()
+                .appendField("Pixel ");
+            this.appendValueInput("X")
+                .setCheck(null)
+                .appendField("X");
+            this.appendValueInput("Y")
+                .setCheck(null)
+                .appendField("Y");
             this.setInputsInline(true);
             this.setPreviousStatement(true, null);
             this.setNextStatement(true, null);

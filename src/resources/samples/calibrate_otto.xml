@@ -15,14 +15,14 @@
       </block>
     </value>
     <next>
-      <block type="otto9_init" id="!@mp;n1f56;B?t?hPiMc">
-        <field name="LL">33</field>
-        <field name="RL">25</field>
-        <field name="LF">26</field>
-        <field name="RF">27</field>
+      <block type="otto9_init" id="KiD$wsD/=)TB|%.S6t86">
+        <field name="LL">23</field>
+        <field name="RL">22</field>
+        <field name="LF">33</field>
+        <field name="RF">25</field>
         <field name="Cali">True</field>
-        <field name="Noise">34</field>
-        <field name="Buzzer">4</field>
+        <field name="Noise">35</field>
+        <field name="Buzzer">15</field>
         <field name="Trigger">2</field>
         <field name="Echo">39</field>
         <next>
