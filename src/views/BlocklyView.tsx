@@ -10,7 +10,7 @@ interface BlocklyViewProps {
 }
 
 export default class BlocklyView extends Component<BlocklyViewProps, {}> {
-  private blocklyDiv?: Element;
+  private blocklyDiv?: HTMLDivElement;
   private xml: string | null;
 
   constructor(props: BlocklyViewProps) {
@@ -19,7 +19,7 @@ export default class BlocklyView extends Component<BlocklyViewProps, {}> {
     this.xml = null;
   }
 
-  protected componentWillReceiveProps(nextProps: BlocklyViewProps) {
+  componentWillReceiveProps(nextProps: BlocklyViewProps) {
     if (nextProps.visible) {
       if (this.xml !== nextProps.xml) {
         this.setXml(nextProps.xml);
@@ -27,7 +27,7 @@ export default class BlocklyView extends Component<BlocklyViewProps, {}> {
     }
   }
 
-  protected componentDidMount() {
+  componentDidMount() {
     if (this.blocklyDiv) {
       let toolboxText = getToolBoxXml();
       const toolboxXml = Blockly.Xml.textToDom(toolboxText);
@@ -89,7 +89,7 @@ export default class BlocklyView extends Component<BlocklyViewProps, {}> {
       <div
         style={{ visibility: this.props.visible ? 'visible' : 'hidden' }}
         id="blockly"
-        ref={(div) => this.blocklyDiv = div}>
+        ref={(div: HTMLDivElement | null) => this.blocklyDiv = div ? div : undefined}>
       </div>
     );
   }

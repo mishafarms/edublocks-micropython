@@ -1,0 +1,11 @@
+--- node_modules/chokidar/types/index.d.ts	2024-02-02 06:01:16.027484049 +0000
++++ node_modules/chokidar/types/index.d.ts	2024-02-02 05:54:55.423504432 +0000
+@@ -8,6 +8,8 @@
+ 
+ export class FSWatcher extends EventEmitter implements fs.FSWatcher {
+   options: WatchOptions;
++  ref(): this;
++  unref(): this;
+ 
+   /**
+    * Constructs a new FSWatcher instance with optional WatchOptions parameter.

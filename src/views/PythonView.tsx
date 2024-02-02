@@ -12,10 +12,10 @@ interface PythonViewProps {
 }
 
 export default class PythonView extends Component<PythonViewProps, {}> {
-  private editorDiv?: Element;
+  private editorDiv?: HTMLDivElement;
   private editor: any;
 
-  protected componentWillReceiveProps(nextProps: PythonViewProps) {
+  componentWillReceiveProps(nextProps: PythonViewProps) {
     if (nextProps.visible) {
       // Need to check visible change as well to force refresh
       if (this.getCode() !== nextProps.python || this.props.visible !== nextProps.visible) {
@@ -24,7 +24,7 @@ export default class PythonView extends Component<PythonViewProps, {}> {
     }
   }
 
-  protected componentDidMount() {
+  componentDidMount() {
     if (!this.editorDiv) { throw new Error('No editor div'); }
 
     this.editor = ace.edit(this.editorDiv);
@@ -50,7 +50,7 @@ export default class PythonView extends Component<PythonViewProps, {}> {
   public render() {
     return (
       <div style={{ display: this.props.visible ? 'block' : 'none' }} id="python">
-        <div id="editor" ref={(div) => this.editorDiv = div}></div>
+        <div id="editor" ref={(div) => this.editorDiv = div ? div : undefined}></div>
       </div>
     );
   }

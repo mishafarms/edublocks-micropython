@@ -9,12 +9,12 @@ interface TerminalViewProps {
 }
 
 export default class TerminalView extends Component<TerminalViewProps, {}> implements TerminalInterface {
-  private termDiv?: Element;
+  private termDiv?: HTMLDivElement;
   private term: Terminal;
 
   private onDataHandler: (data: string) => void;
 
-  protected componentDidMount() {
+  componentDidMount() {
     if (!this.termDiv) { throw new Error('No term'); }
 
     const [x, y] = this.calculateSize();
@@ -60,7 +60,7 @@ export default class TerminalView extends Component<TerminalViewProps, {}> imple
     this.term.resize(x, y);
   }
 
-  protected componentDidUpdate(prevProps: TerminalViewProps) {
+  componentDidUpdate(prevProps: TerminalViewProps) {
     if (!prevProps.visible && this.props.visible) {
       this.resizeTerminal();
     }
@@ -84,7 +84,7 @@ export default class TerminalView extends Component<TerminalViewProps, {}> imple
   public render() {
     return (
       <div style={{ display: this.props.visible ? 'block' : 'none' }} class="TerminalView">
-        <div class="TerminalView__term" ref={(div) => this.termDiv = div}></div>
+        <div class="TerminalView__term" ref={(div) => this.termDiv = div ? div : undefined}></div>
       </div>
     );
   }

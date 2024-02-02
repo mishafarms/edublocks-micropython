@@ -66,7 +66,7 @@ export default function Nav(props: NavProps) {
 
                 <a class="button icon-desktop" title="Terminal" href="javascript:void(0)"
                    onClick={() => props.onTerminal()}>
-                    WebREPL >>>
+                    WebREPL {'>>>'}
                 </a>
             </div>
         </nav>

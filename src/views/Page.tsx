@@ -259,7 +259,7 @@ export default class Page extends Component<PageProps, PageState> {
     this.switchView('python');
   }
 
-  protected async componentDidMount() {
+  async componentDidMount() {
 
   }
 
@@ -436,16 +436,21 @@ export default class Page extends Component<PageProps, PageState> {
 
     const fileName = doc.fileName || `untitled.${doc.fileType}`;
 
-    if (doc.fileType === EduBlocksXML) {
-      const blob = new Blob([doc.xml], { type: 'text/xml' });
 
-      saveAs(blob, fileName);
+    if (doc.fileType === EduBlocksXML) {
+      if (doc.xml !== null) {
+        const blob = new Blob([doc.xml], {type: 'text/xml'});
+
+        saveAs(blob, fileName);
+      }
     }
 
-    if (doc.fileType === PythonScript) {
-      const blob = new Blob([doc.python], { type: 'text/xml' });
+    if (doc.python !== null) {
+      if (doc.fileType === PythonScript) {
+        const blob = new Blob([doc.python], {type: 'text/xml'});
 
-      saveAs(blob, fileName);
+        saveAs(blob, fileName);
+      }
     }
   }
 

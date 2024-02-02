@@ -18,6 +18,7 @@ export interface PythonDocumentState {
   fileType: typeof PythonScript;
   dirName: string;
   fileName: string | null;
+  xml?: string | null;
   python: string | null;
   pythonClean: false;
 }

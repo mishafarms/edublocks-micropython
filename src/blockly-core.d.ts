@@ -1467,7 +1467,7 @@ declare module Blockly {
         getAdjustedInt(block: Block, name: string, delta?: number, negate?: boolean): any;
         valueToCode(block: Block, name: string, option?: any): string;
         quote_(code: any): string
-        provideFunction_(name: string, func: [string, any]): string;
+        provideFunction_(name: string, func: string[]): string;
 
         workspaceToCode(workspace: Blockly.Workspace): string;
 

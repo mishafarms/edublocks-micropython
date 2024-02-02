@@ -26,7 +26,7 @@ export default class FileModal extends Component<FileModalProps, FileModalState>
     };
   }
 
-  protected async componentDidMount() {
+  public async componentDidMount() {
     const files = await this.props.app.listFiles(this.state.cwd);
 
     this.setState({ files });
