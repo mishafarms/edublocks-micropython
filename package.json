@@ -1,6 +1,7 @@
 {
   "name": "edublocks-micro",
   "version": "0.0.1",
+  "license": "CC0-1.0",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
@@ -12,7 +13,6 @@
   "repository": "https://github.com/AllAboutCode/edublocks-micropython",
   "keywords": [],
   "author": "GitHub",
-  "license": "CC0-1.0",
   "devDependencies": {
     "@types/es6-promise": "0.0.32",
     "@types/gulp": "^4.0.2",
@@ -29,7 +29,7 @@
     "gulp-gzip": "^1.4.0",
     "gulp-uglify": "^2.1.2",
     "http-server": "^0.9.0",
-    "parcel": "^1.8.1",
+    "parcel": "1.8.1",
     "pump": "^1.0.2",
     "shelljs": "^0.7.7",
     "tslint": "^5.0.0",
